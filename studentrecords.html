@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<html>
+<head> 
+<title> 
+Student Records
+</title>
+</head>
+
+<body>
+<div id="message"> </div>
+<script> 
+var students = [
+{name: 'Luke', track: 'Web development', achievements: 131, points: 1222},
+{name: 'Leia', track: 'Robotics', achievements: 121, points: 1333},
+{name: 'Hans', track: 'Data science', achievements: 122, points: 122}
+             ]
+var message ='';
+var search;
+    
+    function getReport(students) {
+    var report = '<h2> Student: ' + students.name + '</h2>';
+    report+= '<p>Track: ' + students.track + '</p>';
+    report += '<p>Points: ' + students.points + '</p>';
+    report += '<p>Achievements: ' + students.achievements + '</p>'
+    return report;
+}
+    
+    while (true) {
+       search = prompt("search records");
+    if (search.toLowerCase()=== 'quit' || search === null) {
+        break;
+    }
+      for (var i = 0; i <students.length; i++) {
+          student = students[i];
+          if (student.name === search) {
+              message = getReport(student);
+              print(message);
+            
+          }
+      }
+    }
+    
+
+function print(message) {
+   document.getElementById("message").innerHTML = message;
+             }
+print(message);
+    
+   
+</script>
+</body>
+
+</html>
